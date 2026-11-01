@@ -11,7 +11,7 @@ export default defineConfig({
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
+  retries: 1,
   /* Opt out of parallel tests on CI. */
   workers: 3,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
@@ -23,6 +23,14 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+
+    video: {mode: 'on-first-retry', size: {width: 1900, height: 1080}},
+
+    screenshot: 'on-first-failure',
+
+    launchOptions:{
+      slowMo: 0, // slow down each step by given milliseconds
+    }
     
   },
 
@@ -30,25 +38,24 @@ export default defineConfig({
   projects: [
     
     {
-      name: 'chromium',
-      use: { 
-        ...devices['Desktop Chrome'],
-        viewport: {width: 1900, height: 1080} 
+      name: 'Mobile Safari',
+      use: {
+        ...devices['iPhone 16'],
       },
     },
 
     /*
     {
       name: 'chromium',
-      use: { 
+      use: {
         ...devices['Desktop Chrome'],
-        viewport: {width: 1900, height: 1080} 
+        viewport: {width: 1900, height: 1080}
       },
     },
 
     {
       name: 'firefox',
-      use: { 
+      use: {
         ...devices['Desktop Firefox'],
         viewport: {width: 1850, height: 1000} 
        },
@@ -62,9 +69,34 @@ export default defineConfig({
       },
     },
 
+    {
+      name: 'Microsoft Edge',
+      use: {
+        ...devices['Desktop Edge'],
+        channel: 'msedge',
+        viewport: {width: 1900, height: 1080}
+      },
+    },
+
+
+    {
+      name: 'Google Chrome',
+      use: {
+        ...devices['Desktop Chrome'],
+        channel: 'chrome',
+        viewport: {width: 1900, height: 1080}
+      },
+    },
+
+    {
+      name: 'Mobile Chrome',
+      use: {
+        ...devices['Pixel 5'],
+      },
+    },
+
 */
  
 
   ],
 });
-

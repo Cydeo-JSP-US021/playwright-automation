@@ -22,6 +22,9 @@ Week02 Review:
 
         SEP Project
 
+Come back at 11:40 AM
+    Please install microsoft edge browser during the break time.
+
 Next Week
         During the week days:
             Module03 Recordings
@@ -90,3 +93,23 @@ GetByLabel Locator
         There is no label or accessible label.
 
 
+GetByPlaceholder Locator
+    Key idea: Only when there is a meaningful placeholder on an input/textarea.
+
+    Use getByPlaceholder() when:
+        The element is an input or textarea.
+        It has a non‑empty, descriptive placeholder attribute.
+
+    Do not use it if:
+        There is no placeholder.
+        The placeholder is empty or extremely generic (“Enter text”, “Type here”) and not unique.
+
+
+GetByTestId Locator
+    Key idea: Only when there is a data-testid (or your configured test id attribute).
+
+    Use getByTestId() when:
+        The element has a data-testid attribute with a clear, unique value.
+
+    Do not use it if:
+        No data-testid attribute is present.
