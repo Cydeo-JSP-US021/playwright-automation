@@ -1,19 +1,11 @@
 import { test } from "@playwright/test";
 
+import { CommonUI } from "./CommonUI";
+
 test.describe("Start application test cases @start-app-step", () => {
 
     test.beforeEach(async ({ page }) => {
-
-        const credentials = Buffer.from("automation-user:123abc").toString("base64");
-
-        await page.setExtraHTTPHeaders(
-            {"Authorization": `Basic ${credentials}`}
-        );
-
-        await page.goto("https://qa.sep.tdtm.cydeo.com/taws");
-
-        await page.waitForTimeout(2000);
-
+        await CommonUI.login(page);
         
     });
 
