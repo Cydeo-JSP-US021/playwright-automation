@@ -4,7 +4,7 @@ import { CommonUI } from "./CommonUI";
 
 import { faker } from "@faker-js/faker";
 
-test.describe("Payment Plan test cases @start-app-step", () => {
+test.describe("Payment Plan test cases @payment-plan-step", () => {
 
     test.beforeEach(async ({ page }) => {
         await CommonUI.login(page);

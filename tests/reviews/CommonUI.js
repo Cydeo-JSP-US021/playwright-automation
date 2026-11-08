@@ -45,4 +45,10 @@ export class CommonUI {
         await expect(startApplicationStepper).toHaveCSS("background-color", "rgb(172, 245, 138)");
     }
 
+    static async completePaymentPlanStep(page, paymentPlan) {  // payment plans: upfront, installments
+
+        
+
+    }
+
 }
