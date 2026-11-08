@@ -1,6 +1,6 @@
 import { test } from "@playwright/test";
 
-test.describe("@start-app-step", () => {
+test.describe("Start application test cases @start-app-step", () => {
 
     test.beforeEach(async ({ page }) => {
 

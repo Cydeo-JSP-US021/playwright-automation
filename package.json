@@ -9,7 +9,7 @@
     "test:specific:headless": "npx playwright test --grep file-name.spec.js",
     "test:specific:headed": "npx playwright test --grep file-name.spec.js --headed",
     "test:tag:headless": "npx playwright test --grep @tagName",
-    "test:tag:headed": "npx playwright test --grep @tagName --headed",
+    "test:tag:headed": "npx playwright test --grep @@start-app-step --headed",
     "report": "npx playwright show-report"
   },
   "keywords": [],
