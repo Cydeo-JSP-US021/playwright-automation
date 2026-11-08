@@ -10,7 +10,13 @@ Week03
 
         Playwright MCP setup on Copilot CLI
 
-Come back at 11:40 AM EST
+After Class:
+    Please complete the following specs:
+        sep-practices02.spec.js
+        sep-practices03.spec.js
+
+    The requirments of the test cases are in tests/reviews/Practice Test Cases.txt file
+
 
 Next Week:
     During the week days:
