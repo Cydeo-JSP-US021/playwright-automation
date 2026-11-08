@@ -1,0 +1,22 @@
+Week03
+
+    Topics:
+        Gherkin Syntaxes 
+            (Background, Scenario, Scenario Outline & Example, Given, When, Then, And)
+
+        Playwright modul03 review
+        dotenv & js-faker
+
+
+        Playwright MCP setup on Copilot CLI
+
+Class starts at 10:05 AM EST
+
+Next Week:
+    During the week days:
+        Jenkins Job Configurations 
+        Feature files for SEP User stories
+
+    During the live class:
+        GitHub Actions ( .yml )
+        Browser & Context Fixture for UI testing
