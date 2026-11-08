@@ -30,4 +30,19 @@ export class CommonUI {
         await phoneNumberInput.fill(phoneNumber);
     }
 
+    static async completeStartApplicationStep(page, firstName, lastName, email, phoneNumber) {
+        const startApplicationStepper = page
+            .locator(".step")
+            .filter({ hasText: "Start Application" })
+            .locator(".step-circle");
+
+        await expect(startApplicationStepper).toHaveCSS("background-color", "rgb(1, 201, 255)");
+        await this.enterPersonalDetails(page, firstName, lastName, email, phoneNumber);
+
+        const nextButton = page.getByRole("button", { name: "Next", exact: true });
+        await nextButton.click();
+
+        await expect(startApplicationStepper).toHaveCSS("background-color", "rgb(172, 245, 138)");
+    }
+
 }
