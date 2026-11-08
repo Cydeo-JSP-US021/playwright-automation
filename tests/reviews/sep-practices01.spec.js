@@ -56,6 +56,32 @@ test.describe("Start application test cases @start-app-step", () => {
 
     test("Verify that personal input fields are enabled and accept user input", async ({page}) => {
 
+        const firstNameInput = page.getByRole("textbox", { name: "First Name" });
+        const lastNameInput = page.getByRole("textbox", { name: "Last Name" });
+        const emailInput = page.getByRole("textbox", { name: "Email Address" });
+        const phoneNumberInput = page.getByRole("textbox", { name: "Phone" });
+
+        await expect(firstNameInput).toBeVisible();
+        await expect(lastNameInput).toBeVisible();
+        await expect(emailInput).toBeVisible();
+        await expect(phoneNumberInput).toBeVisible();
+
+
+        const firstName = faker.person.firstName();  // Muhtar
+        const lastName = faker.person.lastName();
+        const email = faker.internet.email();
+        const phoneNumber = faker.string.numeric(10);
+
+        await firstNameInput.fill(firstName); // Muhtar
+        await lastNameInput.fill(lastName);
+        await emailInput.fill(email);
+        await phoneNumberInput.fill(phoneNumber);
+
+        expect(firstNameInput).toHaveValue(firstName);
+        expect(lastNameInput).toHaveValue(lastName);
+        expect(emailInput).toHaveValue(email);
+        expect(phoneNumberInput).toHaveValue(phoneNumber);
+
     });
 
 
