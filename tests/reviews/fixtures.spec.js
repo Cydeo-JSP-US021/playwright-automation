@@ -89,7 +89,33 @@ test('custom context & custom browser @custom', async () => {
     await page.goto('https://www.facebook.com/');
     await page.waitForTimeout(4000);
 
+
+});
+
+
+
+test('Request fixture', async ({ request }) => {
+
+    const baseURL = 'https://spartan-app-new-nonsecure.onrender.com';
+    const endpoint = '/api/v2/spartans/search';
+
+    const response = await request.get(`${baseURL}${endpoint}`);
     
+
+    // verify status code.
+    expect(response.status()).toBe(200);
+
+    const headers = response.headers();
+
+    // verify content type is JSON
+    expect(headers['content-type']).toContain('application/json');
+
+    const responseBody = await response.json();
+
+    // verify that the message in body is "Successfully queried all the Spartans."
+    expect(responseBody.message).toBe('Successfully queried all the Spartans.');
+
+    console.log('Response Body:', responseBody);
 
 
 });
