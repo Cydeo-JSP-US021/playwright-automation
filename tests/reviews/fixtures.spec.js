@@ -37,8 +37,8 @@ test('Context fixture @context', async ({ context }) => {
 
 test('Browser fixture @browser', async ({ browser }) => {
 
-    let context1 = browser.newContext();
-    let context2 = browser.newContext();
+    let context1 = await browser.newContext();
+    let context2 = await browser.newContext();
 
 
     let page1 = await context1.newPage();
